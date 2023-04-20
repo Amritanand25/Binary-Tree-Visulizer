@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useReducer } from "react";
+import "./App.css";
+import GlobalStore from "./context/context";
+import action from "./context/action";
+import store from "./context/store";
+import FormComponent from "./components/FormComponent";
+import BinaryTreeVisualizer from "./components/BinaryTreeVisualizer​​";
 
 function App() {
+  const [state, dispatch] = useReducer(action, store);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalStore.Provider value={{ state, dispatch }}>
+      <div className="App">
+        <header className="header">
+          <h3>BinaryTree Visualizer​​</h3>
+        </header>
+        <section><FormComponent /></section>
+        <section className="binary-tree-container"><BinaryTreeVisualizer /></section>
+      </div>
+    </GlobalStore.Provider>
   );
 }
 
