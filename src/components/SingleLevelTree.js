@@ -1,21 +1,16 @@
-import React, {useState } from "react";
+import React from "react";
 import "../styles/BinaryTree.css";
 
 const SingleLevelTree = ({ treeData , findPathHandler}) => {
-  const [current, setCurrentData] = useState('1');
 
-  const path = (item) => {
-    findPathHandler(item);
-    setCurrentData(item);
-  }
   return (
     <>
      {
-      current &&  <ul>
+       <ul>
       {treeData.map((item) => (
         <li key={item.id}>
           <div
-            onClick={() => path(item)}
+            onClick={() => findPathHandler(item)}
             className={item.showLevel ? "show-level" : "show"}
           >
             {item.data}

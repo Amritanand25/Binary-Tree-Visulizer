@@ -24,8 +24,8 @@ function finalPathUpdate(arr, treeData) {
   for (let i = 0; i < treeData.length; i++) {
     if (arr.includes(treeData[i].id)) {
       treeData[i].showLevel = true;
-    }else{
-        treeData[i].showLevel = false;
+    } else {
+      treeData[i].showLevel = false;
     }
     finalPathUpdate(arr, treeData[i].children);
   }

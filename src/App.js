@@ -14,8 +14,12 @@ function App() {
         <header className="header">
           <h3>BinaryTree Visualizer​​</h3>
         </header>
-        <section><FormComponent /></section>
-        <section className="binary-tree-container"><BinaryTreeVisualizer /></section>
+        <section>
+          <FormComponent />
+        </section>
+        <section className="binary-tree-container">
+          <BinaryTreeVisualizer />
+        </section>
       </div>
     </GlobalStore.Provider>
   );
